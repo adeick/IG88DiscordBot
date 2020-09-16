@@ -1,4 +1,4 @@
 {
     "prefix": "/",
-    "token": ${{secrets.DISCORD_TOKEN}}
+    "token": "NTcxMDkxMjA2NDcwMTA3MTQ2.XMIsIQ.cBBXB6vJujLwae27F-7NNbKUwLI"
 }
