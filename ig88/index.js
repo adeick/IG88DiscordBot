@@ -1,8 +1,10 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
-//const timer = require('./timer');  //https://nodejs.org/api/modules.html#modules_module_exports
+//const Sequelize = require('sequelize');
 
+
+//const timer = require('./timer');  //https://nodejs.org/api/modules.html#modules_module_exports
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -15,15 +17,16 @@ for (const file of commandFiles) {
 	client.commands.set(command.name, command);
 }
 
+//const CatchPhrase = require('./models/CatchPhrase')(sequelize, Sequelize.DataTypes);
+
 client.once('ready', () => {
 	console.log('Ready!');
-	//Tags.sync();
 });
 
 client.on('message', message => {
-	if (!message.content.startsWith(prefix) || message.author.bot) return;
+	if (!message.content.startsWith(prefix) || message.author.bot) return; //if message doesn't start with prefix or was sent by a bot
 
-	const args = message.content.slice(prefix.length).trim().split(/ +/);
+	const args = message.content.slice(prefix.length).trim().split(/ +/); //turn words into parameters/arguments
 	const commandName = args.shift().toLowerCase();
     
     const command = client.commands.get(commandName)
