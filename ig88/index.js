@@ -53,12 +53,12 @@ client.on('message', message => {
             message.reply('you need to add an argument!');
         }
 		command.execute(message, args);
-	} catch (error) {
+	} 
+	catch (error) {
 		console.error(error);
 		message.reply('there was an error trying to execute that command!');
 		if(message.author.id == '315672211518128128'){ //me
             message.author.createDM().then(channel => {
-				channel.send("Hi");
 				channel.send(error.toString()); //This doesn't work
 			});
         }
