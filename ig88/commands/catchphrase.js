@@ -10,9 +10,9 @@ client.once('ready', async () => {
     stored.forEach(s => catchphrase.set(s.user_id, s));
 });
 
-Reflect.defineProperty(catchphrase, 'set', {
+Reflect.defineProperty(catchphrase, 'setSlogan', {
 	/* eslint-disable-next-line func-name-matching */
-	value: async function set(id, slogan) {
+	value: async function setSlogan(id, slogan) {
         const user = catchphrase.get(id);
         if(user){
             user.slogan = slogan;
@@ -24,9 +24,9 @@ Reflect.defineProperty(catchphrase, 'set', {
 	},
 });
 
-Reflect.defineProperty(catchphrase, 'get', {
+Reflect.defineProperty(catchphrase, 'getSlogan', {
 	/* eslint-disable-next-line func-name-matching */
-	value: async function get(id) {
+	value: async function getSlogan(id) {
         const user = catchphrase.get(id);
         return user ? user.slogan : "Couldn't find Slogan";
 	},
@@ -41,7 +41,7 @@ module.exports = {
 	execute(message, args) {
         
         const target = message.mentions.users.first() || message.author;
-        return message.channel.send(`${target.tag} has the catchphrase: *${catchphrase.get(target.id)}*`);
+        return message.channel.send(`${target.tag} has the catchphrase: *${catchphrase.getSlogan(target.id)}*`);
         
     },
 };
