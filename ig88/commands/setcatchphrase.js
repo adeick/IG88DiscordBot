@@ -44,6 +44,6 @@ module.exports = {
             str += " " + args[i];
         }
         catchphrase.set(message.author.id, str);
-        return message.channel.send(`${message.author.tag} just set the slogan: *${catchphrase.set(target.id)}*`);
+        return message.channel.send(`${message.author.tag} just set their slogan`);
     },
 };
