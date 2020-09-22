@@ -19,7 +19,7 @@ Reflect.defineProperty(catchphrase, 'set', {
             return user.save();
         }
         const newUser = await Users.create({ user_id: id, slogan: slogan});
-		currency.set(id, newUser);
+		catchphrase.set(id, newUser);
 		return newUser;
 	},
 });
@@ -44,6 +44,6 @@ module.exports = {
             str += " " + args[i];
         }
         catchphrase.set(message.author.id, str);
-        return message.channel.send(`${message.author.tag} just set their slogan to *${catchphrase.set(target.id)}*`);
+        return message.channel.send(`${message.author.tag} just set their slogan! `);
     },
 };

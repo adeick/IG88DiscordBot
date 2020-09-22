@@ -59,7 +59,7 @@ client.on('message', message => {
 		if(message.author.id == '315672211518128128'){ //me
             message.author.createDM().then(channel => {
 				channel.send("Hi");
-				channel.send(error);
+				channel.send(error.toString()); //This doesn't work
 			});
         }
 

@@ -19,7 +19,7 @@ Reflect.defineProperty(catchphrase, 'set', {
             return user.save();
         }
         const newUser = await Users.create({ user_id: id, slogan: slogan});
-		currency.set(id, newUser);
+		catchphrase.set(id, newUser);
 		return newUser;
 	},
 });
