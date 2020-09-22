@@ -33,15 +33,18 @@ Reflect.defineProperty(catchphrase, 'get', {
 });
 
 module.exports = {
-	name: 'catchphrase',
-	description: 'Stores a slogan for each user',
+	name: 'setcatchphrase',
+	description: 'Sets a slogan for each user',
     args: true,
     allGuilds: true,
-    aliases: ['slogan', 'saying', 'quote'],
+    aliases: ['setslogan', 'setsaying', 'setquote'],
 	execute(message, args) {
-        
-        const target = message.mentions.users.first() || message.author;
-        return message.channel.send(`${target.tag} has the slogan: *${catchphrase.get(target.id)}*`);
+        let str = "";
+        for(let i = 0; i < args.length; i++){
+            str += " " + args[i];
+        }
+        catchphrase.set(message.author.id, str);
+        return message.channel.send(`${message.author.tag} has the slogan: *${catchphrase.set(target.id)}*`);
         
     },
 };
