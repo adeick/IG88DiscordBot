@@ -1,4 +1,5 @@
 const Users = require("../models/Users");
+const Discord = require('discord.js');
 
 //const catchphrase = require('../catchphrase.sqlite');
 const catchphrase = new Discord.Collection();
