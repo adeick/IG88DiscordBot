@@ -28,7 +28,7 @@ Reflect.defineProperty(catchphrase, 'get', {
 	/* eslint-disable-next-line func-name-matching */
 	value: async function get(id) {
         const user = catchphrase.get(id);
-        return user ? user.slogan : 0;
+        return user ? user.slogan : "Couldn't find Slogan";
 	},
 });
 
