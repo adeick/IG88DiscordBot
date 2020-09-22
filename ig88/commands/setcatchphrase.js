@@ -12,14 +12,15 @@ client.once('ready', async () => {
 
 Reflect.defineProperty(catchphrase, 'setSlogan', {
 	/* eslint-disable-next-line func-name-matching */
-	value: async function setSlogan(id, slogan) {
+	value: async function setSlogan(id, phrase) {
         const user = catchphrase.get(id);
         if(user){
-            user.slogan = slogan;
+            user.slogan = phrase;
             return user.save();
         }
-        const newUser = await Users.create({ user_id: id, slogan: slogan});
-		catchphrase.set(id, newUser);
+        const newUser = await Users.create({ user_id: id, slogan: phrase});
+        catchphrase.set(id, newUser);
+        newUser.save();
 		return newUser;
 	},
 });
@@ -28,7 +29,7 @@ Reflect.defineProperty(catchphrase, 'getSlogan', {
 	/* eslint-disable-next-line func-name-matching */
 	value: function getSlogan(id) {
         const user = catchphrase.get(id);
-        return user ? user.slogan : "Couldn't find Slogan";
+        return user ? user.slogan : "Couldn't find Slogan to set";
 	},
 });
 
