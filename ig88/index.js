@@ -57,7 +57,10 @@ client.on('message', message => {
 		console.error(error);
 		message.reply('there was an error trying to execute that command!');
 		if(message.author.id == '315672211518128128'){ //me
-            message.author.createDM().then(channel => channel.send(error));
+            message.author.createDM().then(channel => {
+				channel.send("Hi");
+				channel.send(error);
+			});
         }
 
         return message.author.send(error)
