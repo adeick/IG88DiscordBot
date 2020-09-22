@@ -41,7 +41,7 @@ module.exports = {
 	execute(message, args) {
         
         const target = message.mentions.users.first() || message.author;
-        return message.channel.send(`${target.tag} has the slogan: *${catchphrase.get(target.id)}*`);
+        return message.channel.send(`${target.tag} has the catchphrase: *${catchphrase.get(target.id)}*`);
         
     },
 };
