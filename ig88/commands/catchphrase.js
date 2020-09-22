@@ -4,7 +4,7 @@ const Users = require("../models/Users");
 const catchphrase = new Discord.Collection();
 const client = new Discord.Client();
 
-client.once('ready', () => {
+client.once('ready', async () => {
 	const stored = await Users.findAll();
     stored.forEach(s => catchphrase.set(s.user_id, s));
 });
