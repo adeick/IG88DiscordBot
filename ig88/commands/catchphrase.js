@@ -28,7 +28,7 @@ Reflect.defineProperty(catchphrase, 'getSlogan', {
 	/* eslint-disable-next-line func-name-matching */
 	value: function getSlogan(id) {
         const user = catchphrase.get(id);
-        return user ? user.slogan : "Couldn't find Slogan";
+        return user ? user.slogan : "Lorem Ipsum!";
 	},
 });
 
@@ -39,7 +39,6 @@ module.exports = {
     allGuilds: true,
     aliases: ['slogan', 'saying', 'quote'],
 	execute(message, args) {
-        
         const target = message.mentions.users.first() || message.author;
         return message.channel.send(`${target.tag} has the catchphrase: *${catchphrase.getSlogan(target.id)}*`);
         

@@ -29,7 +29,7 @@ Reflect.defineProperty(catchphrase, 'getSlogan', {
 	/* eslint-disable-next-line func-name-matching */
 	value: function getSlogan(id) {
         const user = catchphrase.get(id);
-        return user ? user.slogan : "Couldn't find Slogan to set";
+        return user ? user.slogan : "gibberish that I was unable to understand! (My master is working on it)";
 	},
 });
 
