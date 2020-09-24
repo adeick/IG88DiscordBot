@@ -44,7 +44,7 @@ module.exports = {
         for(let i = 0; i < args.length; i++){
             str += " " + args[i];
         }
-        message.channel.send(`Trying this: ${catchphrase.setSlogan(message.author.id, str)}`);
+        message.channel.send(`Trying this: ${await catchphrase.setSlogan(message.author.id, str)}`);
         return message.channel.send(`${message.author.tag} just set their slogan to ${catchphrase.getSlogan(message.author.id)} (not ${str})`);
     },
 };
