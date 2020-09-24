@@ -1,4 +1,4 @@
-const Users = require("../models/Users")(sequelize, Sequelize.DataTypes);
+const Users = require('../dbObjects');
 const Discord = require('discord.js');
 
 //const catchphrase = require('../catchphrase.sqlite');

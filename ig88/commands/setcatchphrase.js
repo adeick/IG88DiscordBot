@@ -1,4 +1,4 @@
-const Users = require("../models/Users")(sequelize, Sequelize.DataTypes);
+const Users = require('../dbObjects');
 const Discord = require('discord.js');
 
 //const catchphrase = require('../catchphrase.sqlite');
@@ -20,7 +20,6 @@ Reflect.defineProperty(catchphrase, 'setSlogan', {
         }
         const newUser = await Users.create({ user_id: id, slogan: phrase});
         catchphrase.set(id, newUser);
-        newUser.save();
 		return newUser;
 	},
 });
