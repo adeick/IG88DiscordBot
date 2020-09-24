@@ -1,4 +1,4 @@
-const Users = require("/ig88/models/Users");
+const Users = require("../models/Users");
 const Discord = require('discord.js');
 
 //const catchphrase = require('../catchphrase.sqlite');
