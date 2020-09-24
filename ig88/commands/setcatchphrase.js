@@ -1,9 +1,11 @@
 const Users = require('../dbObjects');
 const Discord = require('discord.js');
+const { Op } = require('sequelize');
 
 //const catchphrase = require('../catchphrase.sqlite');
 const catchphrase = new Discord.Collection();
 const client = new Discord.Client();
+
 
 client.once('ready', async () => {
 	const stored = await Users.findAll();
