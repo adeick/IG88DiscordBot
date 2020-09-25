@@ -38,7 +38,7 @@ module.exports = {
 	description: 'Stores a slogan for each user',
     args: true,
     allGuilds: true,
-    aliases: ['slogan', 'saying', 'quote'],
+    aliases: ['slogan', 'saying', 'quote', 'motto'],
 	execute(message, args) {
         const target = message.mentions.users.first() || message.author;
         return message.channel.send(`${target} has the catchphrase: *${message.client.catchphrase.get(target.id)}*`);

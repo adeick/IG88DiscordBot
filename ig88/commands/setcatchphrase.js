@@ -38,14 +38,15 @@ module.exports = {
 	description: 'Sets a slogan for each user',
     args: true,
     allGuilds: true,
-    aliases: ['setslogan', 'setsaying', 'setquote'],
+    aliases: ['setslogan', 'setsaying', 'setquote', 'setmotto'],
 	execute(message, args) {
-        let str = "";
-        for(let i = 0; i < args.length; i++){
-            str += args[i] + " ";
+        let str = args[0];
+        for(let i = 1; i < args.length; i++){
+            str += " " + args[i];
         }
         message.client.catchphrase.set(message.author.id, str);
-        return message.channel.send("Slogan set to " + message.client.catchphrase.get(message.author.id))
+        return message.channel.send(`The wise words of ${message.author}...  
+        *${message.client.catchphrase.get(message.author.id)}*. Breathtaking.`);
         // message.channel.send(`Trying this: ${catchphrase.setSlogan(message.author.id, str)}`);
         // return message.channel.send(`${message.author.tag} just set their slogan to ${catchphrase.getSlogan(message.author.id)} (not ${str})`);
     },
