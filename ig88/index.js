@@ -1,12 +1,13 @@
 const fs = require('fs');
 const Discord = require('discord.js');
+const Client = require('./client/Client');
 const { prefix, token } = require('./config.json');
 //const Sequelize = require('sequelize');
 
+const client = new Client();
 
 //const timer = require('./timer');  //https://nodejs.org/api/modules.html#modules_module_exports
 
-const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
