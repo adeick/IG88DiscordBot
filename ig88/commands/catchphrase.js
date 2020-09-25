@@ -51,10 +51,10 @@ module.exports = {
                 return message.channel.send(`Amazing! ${target} has written\n\n*${message.client.catchphrase.get(message.author.id)}*\n\nThank you allowing me to be part of this moment.`);
                 break;
             case 2:
-                return message.channel.send(`Hear, Hear! By the High Decree of ${message.author},\n\n*${message.client.catchphrase.get(message.author.id)}*`);
+                return message.channel.send(`Hear, Hear! By the High Decree of ${target},\n\n*${message.client.catchphrase.get(message.author.id)}*`);
                 break;
             case 3:
-                return message.channel.send(`I'm pretty sure that ${message.author} just found this online... but anyway here's the quote: \n\n*${message.client.catchphrase.get(message.author.id)}*`);
+                return message.channel.send(`I'm pretty sure that ${target} just found this online... but anyway here's the quote: \n\n*${message.client.catchphrase.get(message.author.id)}*`);
                 break;  
         }
     },
