@@ -46,7 +46,10 @@ module.exports = {
         }
         message.client.catchphrase.set(message.author.id, str);
         return message.channel.send(`The wise words of ${message.author}...  
-        *${message.client.catchphrase.get(message.author.id)}*. Breathtaking.`);
+        
+        *${message.client.catchphrase.get(message.author.id)}* 
+        
+        Breathtaking.`);
         // message.channel.send(`Trying this: ${catchphrase.setSlogan(message.author.id, str)}`);
         // return message.channel.send(`${message.author.tag} just set their slogan to ${catchphrase.getSlogan(message.author.id)} (not ${str})`);
     },
