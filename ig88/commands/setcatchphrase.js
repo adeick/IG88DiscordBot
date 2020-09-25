@@ -42,7 +42,7 @@ module.exports = {
 	execute(message, args) {
         let str = "";
         for(let i = 0; i < args.length; i++){
-            str += " " + args[i];
+            str += args[i] + " ";
         }
         message.client.catchphrase.set(message.author.id, str);
         return message.channel.send("Slogan set to " + message.client.catchphrase.get(message.author.id))
