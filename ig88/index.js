@@ -12,6 +12,7 @@ client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 const welcome = require('./welcome.js');
+const flavor = require('./flavor.js');
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
@@ -25,6 +26,7 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
+	flavor.execute(message);
 	if (!message.content.startsWith(prefix) || message.author.bot) return; //if message doesn't start with prefix or was sent by a bot
 
 	const args = message.content.slice(prefix.length).trim().split(/ +/); //turn words into parameters/arguments
