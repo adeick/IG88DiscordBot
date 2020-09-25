@@ -45,11 +45,23 @@ module.exports = {
             str += " " + args[i];
         }
         message.client.catchphrase.set(message.author.id, str);
-        return message.channel.send(`The wise words of ${message.author}...  
-        
-        *${message.client.catchphrase.get(message.author.id)}* 
-        
-        Breathtaking.`);
+
+        let random = Math.floor(Math.random() * 4); //0, 1, 2, 3
+
+        switch(random){
+            case 0:
+                return message.channel.send(`The wise words of ${message.author}...  \n\n*${message.client.catchphrase.get(message.author.id)}*\n\nBreathtaking.`);
+                break;
+            case 1:
+                return message.channel.send(`Woah, ${message.author} just said  \n\n*${message.client.catchphrase.get(message.author.id)}*\n\nTruly Inspiring.`);
+                break;
+            case 2:
+                return message.channel.send(`Enlightened thinking, ${message.author}. (To the rest of the people that didn't make it to the Ted Talk, you can read the TL;DR below)   \n\n*${message.client.catchphrase.get(message.author.id)}*`);
+                break;
+            case 3:
+                return message.channel.send(`lmfao ${message.author}... what kind of a quote is this? \n\n*${message.client.catchphrase.get(message.author.id)}*\n\nMy expectations were low, but **holy shit**.`);
+                break;  
+        }
         // message.channel.send(`Trying this: ${catchphrase.setSlogan(message.author.id, str)}`);
         // return message.channel.send(`${message.author.tag} just set their slogan to ${catchphrase.getSlogan(message.author.id)} (not ${str})`);
     },

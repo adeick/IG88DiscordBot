@@ -41,6 +41,21 @@ module.exports = {
     aliases: ['slogan', 'saying', 'quote', 'motto'],
 	execute(message, args) {
         const target = message.mentions.users.first() || message.author;
-        return message.channel.send(`${target} has the catchphrase: *${message.client.catchphrase.get(target.id)}*`);
+        let random = Math.floor(Math.random() * 4); //0, 1, 2, 3
+
+        switch(random){
+            case 0:
+                return message.channel.send(`${target} has the catchphrase\n\n*${message.client.catchphrase.get(target.id)}*\n\nPersonally not very impressed but that's just me.`);
+                break;
+            case 1:
+                return message.channel.send(`Amazing! ${target} has written\n\n*${message.client.catchphrase.get(message.author.id)}*\n\nThank you allowing me to be part of this moment.`);
+                break;
+            case 2:
+                return message.channel.send(`Hear, Hear! By the High Decree of ${message.author},\n\n*${message.client.catchphrase.get(message.author.id)}*`);
+                break;
+            case 3:
+                return message.channel.send(`I'm pretty sure that ${message.author} just found this online... but anyway here's the quote: \n\n*${message.client.catchphrase.get(message.author.id)}*`);
+                break;  
+        }
     },
 };
