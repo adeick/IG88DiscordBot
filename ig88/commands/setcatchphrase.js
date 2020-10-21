@@ -14,7 +14,7 @@
 // Reflect.defineProperty(catchphrase, 'setSlogan', {
 // 	/* eslint-disable-next-line func-name-matching */
 // 	value: async function setSlogan(id, phrase) {//async
-//         const user = await catchphrase.get(id);
+//         const user = await catchphrase.get(id).then(x => {return x});
 //         if(user){
 //             user.slogan = phrase;
 //             return user.save();
