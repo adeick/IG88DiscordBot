@@ -13,12 +13,12 @@ exports.execute = (message) => {
     }
 
     if(args.includes("fuck") && message.channel.name != "shenanigans" && message.author.tag != "Darth_Vader#4942"){
-        let random = Math.floor(Math.random() * 6); //0 - 5
+        let random = Math.floor(Math.random() * 90); //0 - 5
         if(random == 0){
-            message.channel.send(`If I was a moderation bot, I would tell you to watch your language. Luckily, I'm not. Carry on. :)`);
+            message.channel.send(`I'm an impressionable young bot and like learning naughty words!`);
         }
         if(random == 1){
-            message.channel.send(`Woah! ${message.author} just used a naught word!`);
+            message.channel.send(`Woah! ${message.author} just used a naughty word!`);
         }
     }
 
