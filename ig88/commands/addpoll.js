@@ -22,6 +22,7 @@ module.exports = {
         .then((botMessage) => {
             for(i = i; i < args.length; i++){
                 botMessage.react(args[i]);
+                message.channel.send(args[i]);
             }
         })	
         .catch((error) => {
