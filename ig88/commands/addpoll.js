@@ -18,10 +18,16 @@ module.exports = {
             }
         }
 //        if(message.author.id == '315672211518128128'){
-        const botMessage = await message.channel.send(str);	
+        const botMessage = message.channel.send(str)
+        .then(() => {
+            for(i = i; i < args.length; i++){
+                botMessage.react(args[i]);
+            }
+        })	
+        .catch((error) => {
+            console.error(`Error.\n`, error);
+            message.reply('Hit a snare. Dunno what happened. Please contact Customer Support.');
+        })
         message.delete();
-        for(i = i; i < args.length; i++){
-            botMessage.react(args[i]);
-        }
   },
 };
