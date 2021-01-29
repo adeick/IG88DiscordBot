@@ -18,9 +18,10 @@ module.exports = {
             }
         }
 //        if(message.author.id == '315672211518128128'){
-        message.channel.send(str);	
+        const botMessage = message.channel.send(str);	
+        message.delete();
         for(i = i; i < args.length; i++){
-            message.react(args[i]);
+            botMessage.react(args[i]);
         }
   },
 };
