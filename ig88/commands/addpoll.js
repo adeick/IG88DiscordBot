@@ -18,8 +18,8 @@ module.exports = {
             }
         }
 //        if(message.author.id == '315672211518128128'){
-        const botMessage = message.channel.send(str)
-        .then(() => {
+        message.channel.send(str)
+        .then((botMessage) => {
             for(i = i; i < args.length; i++){
                 botMessage.react(args[i]);
             }
