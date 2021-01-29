@@ -17,12 +17,17 @@ module.exports = {
                 str += " " + args[i];
             }
         }
+        const sleep = milliseconds => { 
+            return new Promise(resolve => setTimeout(resolve, milliseconds)); 
+        }; 
 //        if(message.author.id == '315672211518128128'){
         message.channel.send(str)
         .then((botMessage) => {
             for(i = i; i < args.length; i++){
                 botMessage.react(args[i]);
-                message.channel.send(args[i]);
+                sleep(500).then(() => { 
+                    console.log("Waited") //wait in between posting each emoji
+                }); 
             }
         })	
         .catch((error) => {
