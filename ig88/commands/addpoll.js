@@ -26,7 +26,7 @@ module.exports = {
         })	
         .catch((error) => {
             console.error(`Error.\n`, error);
-            message.reply('Hit a snare. Dunno what happened. Please contact Customer Support.');
+            message.reply(`hit a snare. Dunno what happened. Please contact Customer Support. \n ${error}`);
         })
         message.delete();
   },
