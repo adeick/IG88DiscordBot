@@ -12,6 +12,26 @@ exports.execute = (message) => {
         }
     }
 
+    if(message.channel.name == "shenanigans"){
+        let random = Math.floor(Math.random() * 1000); //0 - 999
+        if(random == 0){
+            message.channel.send(`Anyone remember the great llama/emu war?`);
+        }
+    }
+
+    if(target.tag == message.client.user.tag){
+        let random = Math.floor(Math.random() * 10); //0 - 9
+        if(random == 0){
+            message.react('👀');
+        }
+        if(random == 1){
+            message.react('😐');
+        }
+        if(random == 2){
+            message.react('💯');
+        }
+    }
+
     if(args.includes("fuck") && message.channel.name != "shenanigans" && message.author.tag != "Darth_Vader#4942"){
         let random = Math.floor(Math.random() * 90); //0 - 5
         if(random == 0){
