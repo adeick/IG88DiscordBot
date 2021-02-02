@@ -19,7 +19,7 @@ exports.execute = (message) => {
         }
     }
 
-    if(target.tag == message.client.user.tag){
+    if(target.tag == message.client.user.tag && target != message.author){
         let random = Math.floor(Math.random() * 10); //0 - 9
         if(random == 0){
             message.react('👀');
