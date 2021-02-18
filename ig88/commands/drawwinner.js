@@ -4,7 +4,7 @@ module.exports = {
   args: true,
   allGuilds: false,
   guilds: ['Legion of Honor', 'Easy Coding'],
-  aliases: ['draw', 'lottery'],
+  aliases: ['draw', 'lottery', "pick"],
   guildOnly: false,
 
 	execute(message, args) {

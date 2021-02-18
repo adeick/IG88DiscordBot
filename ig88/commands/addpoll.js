@@ -3,15 +3,17 @@ module.exports = {
   description: 'Gives a person a role',
   args: true,
   allGuilds: true,
-  aliases: ["poll", "survey", "react"],
+  aliases: ["poll", "survey", "react", "createpoll", "makepoll"],
   guildOnly: true,
 
 	execute(message, args) {
         let str = "";
         let i;
+        let emojis = []
         for(i = 0; i < args.length; i++){
             if(args[i].match(/(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g)){
-                break;
+                emojis.push(args.slice(i, i+1))
+                str += "\n" + args[i];
             }
             else{
                 str += " " + args[i];
@@ -21,10 +23,11 @@ module.exports = {
             return new Promise(resolve => setTimeout(resolve, milliseconds)); 
         }; 
 //        if(message.author.id == '315672211518128128'){
+        str == "" ? str = ">" : "";
         message.channel.send(str)
         .then((botMessage) => {
-            for(i = i; i < args.length; i++){
-                botMessage.react(args[i]);
+            for(i = 0; emojis.length > 0; i++){
+                botMessage.react(emojis.shift());
                 sleep(2000).then(() => { 
                     console.log("Waited") //wait in between posting each emoji
                 }); 
