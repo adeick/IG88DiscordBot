@@ -30,7 +30,7 @@ module.exports = {
         str == "" ? str = ">" : "";
 
         for(i = 0; emojis.length < i; i++){
-            message.channel.send(emojis[i])
+            message.channel.send(emojis[i] + " " + emojis.length);
             sleep(2000).then(() => { 
                 console.log("Waited") //wait in between posting each emoji
             }); 
