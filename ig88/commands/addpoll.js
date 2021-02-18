@@ -28,7 +28,15 @@ module.exports = {
         }
 //        if(message.author.id == '315672211518128128'){
         str == "" ? str = ">" : "";
-        
+
+        for(i = 0; emojis.length < i; i++){
+            message.channel.send(emojis[i])
+            sleep(2000).then(() => { 
+                console.log("Waited") //wait in between posting each emoji
+            }); 
+        }
+
+
         sleep(2000).then(() => { 
             console.log("Waited") //wait in between posting each emoji
         }); 
@@ -45,7 +53,12 @@ module.exports = {
         .catch((error) => {
             console.error(`Error.\n`, error);
             message.reply(`hit a snare. Dunno what happened. Please contact Customer Support. \n ${error}`);
-        })
+        });
+
+        sleep(2000).then(() => { 
+            console.log("Waited") //wait in between posting each emoji
+        }); 
+        
         message.delete();
   },
 };
