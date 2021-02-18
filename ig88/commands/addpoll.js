@@ -17,7 +17,7 @@ module.exports = {
         for(i = 0; i < args.length; i++){
             if(args[i].match(/(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g)){
                 emojis.push(args[i]);
-                emojies.push(":one:");
+                emojis.push(":one:");
                 sleep(200).then(() => { 
                     console.log("Waited") //wait in between posting each emoji
                 }); 
