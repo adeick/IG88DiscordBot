@@ -9,11 +9,11 @@ module.exports = {
 	execute(message, args) {
         let str = "";
         let i;
-        let emojis = []
+        let emojis = [];
         for(i = 0; i < args.length; i++){
             if(args[i].match(/(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g)){
                 emojis.push(args[i]);
-                str += "\n" + args[i];
+                str += args[i];
             }
             else{
                 str += " " + args[i];
