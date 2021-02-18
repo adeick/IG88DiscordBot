@@ -20,7 +20,7 @@ module.exports = {
                 sleep(200).then(() => { 
                     console.log("Waited") //wait in between posting each emoji
                 }); 
-                str += args[i];
+                str += " " + args[i];
             }
             else{
                 str += " " + args[i];
@@ -29,6 +29,11 @@ module.exports = {
 //        if(message.author.id == '315672211518128128'){
         str == "" ? str = ">" : "";
         message.channel.send(str)
+
+        sleep(2000).then(() => { 
+            console.log("Waited") //wait in between posting each emoji
+        }); 
+
         .then((botMessage) => {
             for(i = 0; emojis.length > 0; i++){
                 botMessage.react(emojis.shift());
