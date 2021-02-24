@@ -21,7 +21,6 @@ module.exports = {
               return new Promise(resolve => setTimeout(resolve, milliseconds)); 
           }; 
   //        if(message.author.id == '315672211518128128'){
-
         str == "" ? str = ">" : "";
 
           message.channel.send(str)
