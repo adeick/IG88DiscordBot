@@ -20,7 +20,7 @@ exports.execute = (message) => {
     }
 
     if(target.tag == message.client.user.tag && target != message.author){
-        // let str = message.content;
+         let str = message.content;
         // let username = "@" + message.mentions.members.first().displayName;
         // str = str.replace(username, "");
         // message.channel.send(str);
