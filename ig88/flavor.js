@@ -1,6 +1,6 @@
 exports.execute = (message) => {
     const target = message.mentions.users.first() || message.author;
-    const args = message.content.toLowerCase().trim().split(/ +/); 
+    let args = message.content.toLowerCase().trim().split(/ +/); 
 
     if(message.author.bot && message.author.tag != message.client.user.tag){
         let random = Math.floor(Math.random() * 100); //0 - 99
@@ -21,14 +21,13 @@ exports.execute = (message) => {
 
     
     if(target.tag == message.client.user.tag && target != message.author){
-        let str = message.content; 
-        const args = str.trim().split(/ +/); //turn words into parameters/arguments
-        message.channel.send(message.content);
-        message.channel.send(str);
-        message.channel.send(args[0] + "%%%" + args[1]);
-        // if(args[0].match(/ig/i)){ 
-        //     args.shift();
-        // }
+        // let str = message.content; 
+        // message.channel.send(message.content);
+        // message.channel.send(str);
+        // message.channel.send(args[0] + "%%%" + args[1]);
+        if(args[0].match(/ig/i)){ 
+            args.shift();
+        }
         if(args[0].match(/how/i)){ 
             if(args[1].match(/many/i) || args[1].match(/much/i)){
                 let random = Math.floor(Math.random() * 3); //0 - 2
