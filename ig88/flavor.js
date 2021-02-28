@@ -25,7 +25,7 @@ exports.execute = (message) => {
         const args = str.trim().split(/ +/); //turn words into parameters/arguments
         message.channel.send(message.content);
         message.channel.send(str);
-        message.channel.send(args[0]);
+        message.channel.send(args[0] + "%%%" + args[1]);
         // if(args[0].match(/ig/i)){ 
         //     args.shift();
         // }
