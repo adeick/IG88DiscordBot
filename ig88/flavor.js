@@ -22,7 +22,8 @@ exports.execute = (message) => {
     if(target.tag == message.client.user.tag && target != message.author){
         let str = message.content;
         str = str.replace(message.mentions.members.first().displayName, "");
-        // message.channel.send(str);
+        message.channel.send(str);
+        message.channel.send(message.mentions.members.first().displayName);
         const args = str.trim().split(/ +/); //turn words into parameters/arguments
         if(args[0].match(/how/i)){ 
             if(args[1].match(/many/i) || args[1].match(/much/i)){
