@@ -20,6 +20,9 @@ exports.execute = (message) => {
     }
 
     if(target.tag == message.client.user.tag && target != message.author){
+        if (args[0] == message.client.user.tag){
+            args.shift();
+        }
         const args = message.content.trim().split(/ +/); //turn words into parameters/arguments
         if(args[0].match(/how/i)){ 
             if(args[1].match(/many/i) || args[1].match(/much/i)){
