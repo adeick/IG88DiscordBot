@@ -20,7 +20,7 @@ exports.execute = (message) => {
     }
 
     if(target.tag == message.client.user.tag && target != message.author){
-        const args = message.content.slice(prefix.length).trim().split(/ +/); //turn words into parameters/arguments
+        const args = message.content.trim().split(/ +/); //turn words into parameters/arguments
         if(args[0].match(/how/i)){ 
             if(args[1].match(/many/i) || args[1].match(/much/i)){
                 let random = Math.floor(Math.random() * 3); //0 - 2
