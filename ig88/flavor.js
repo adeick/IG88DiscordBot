@@ -21,7 +21,11 @@ exports.execute = (message) => {
 
     
     if(target.tag == message.client.user.tag && target != message.author){
-        const args = message.content.trim().split(/ +/); //turn words into parameters/arguments
+        let str = message.content; 
+        const args = str.trim().split(/ +/); //turn words into parameters/arguments
+        message.channel.send(message.content);
+        message.channel.send(str);
+        message.channel.send(args[0]);
         // if(args[0].match(/ig/i)){ 
         //     args.shift();
         // }
