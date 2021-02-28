@@ -20,11 +20,11 @@ exports.execute = (message) => {
     }
 
     if(target.tag == message.client.user.tag && target != message.author){
-        let str = message.content;
-        let username = "@" + message.mentions.members.first().displayName;
-        str = str.replace(username, "");
-        message.channel.send(str);
-        message.channel.send(username);
+        // let str = message.content;
+        // let username = "@" + message.mentions.members.first().displayName;
+        // str = str.replace(username, "");
+        // message.channel.send(str);
+        // message.channel.send(username);
         const args = str.trim().split(/ +/); //turn words into parameters/arguments
         if(args[0].match(/how/i)){ 
             if(args[1].match(/many/i) || args[1].match(/much/i)){
