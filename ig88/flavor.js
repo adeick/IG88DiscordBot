@@ -20,15 +20,88 @@ exports.execute = (message) => {
     }
 
     if(target.tag == message.client.user.tag && target != message.author){
-        let random = Math.floor(Math.random() * 10); //0 - 9
-        if(random == 0){
-            message.react('👀');
+        const args = message.content.slice(prefix.length).trim().split(/ +/); //turn words into parameters/arguments
+        if(args[0].match(/how/i)){ 
+            if(args[1].match(/many/i) || args[1].match(/much/i)){
+                let random = Math.floor(Math.random() * 3); //0 - 2
+                let messages = ["A lot.",
+                                "Not much",
+                                "Just the right amount"];
+                message.channel.send(messages[random]);
+            }
+            else {
+                // How... (not How many/much)
+                let random = Math.floor(Math.random() * 4); //0 - 3
+                let messages = ["Could be better, honestly",
+                                "Great!",
+                                "Beats me, I get more confused the more I wonder about it.",
+                                "Do you really want to know?"];
+                message.channel.send(messages[random]);   
+            }
         }
-        if(random == 1){
-            message.react('😐');
+        else if(args[0].match(/why/)){
+            let random = Math.floor(Math.random() * 4); //0 - 3
+            let messages = ["You're asking the wrong bot.",
+                            "It's a long story, I don't want to get into it",
+                            "I wonder this as well sometimes",
+                            "I think you're asking the wrong question."];
+            message.channel.send(messages[random]);
         }
-        if(random == 2){
-            message.react('💯');
+        else if(args[0].match(/who/)){
+            let random = Math.floor(Math.random() * 4); //0 - 3
+            let messages = ["Not me",
+                            "@Darth_Vader#4942",
+                            "Couldn't tell ya",
+                            "¯\\_(ツ)_/¯"];
+            message.channel.send(messages[random]);
+        }
+        else if(args[0].match(/where/)){
+            let random = Math.floor(Math.random() * 4); //0 - 3
+            let messages = ["Right over there",
+                            "Down by the bay",
+                            "Home",
+                            "¯\\_(ツ)_/¯"];
+            message.channel.send(messages[random]);
+        }
+        else if(args[0].match(/when/)){
+            if(args[1].match(/will/) || args[1].match(/would/)){
+                let random = Math.floor(Math.random() * 4); //0 - 3
+                let messages = ["In a loooong loooong time",
+                                "NEVER! STOP ASKING",
+                                "Let's do tomorrow",
+                                "Maybe a week?"];
+                message.channel.send(messages[random]);
+            }
+            else{
+                let random = Math.floor(Math.random() * 4); //0 - 3
+                let messages = ["It was the summer of '05...",
+                                "Yesterday",
+                                "It was awhile back, I can't remember exactly",
+                                "Like, maybe a week ago"];
+                message.channel.send(messages[random]);
+            }
+        }
+        else if(args[args.length-1].match(/?/)){
+            //question
+            let random = Math.floor(Math.random() * 5); //0 - 3
+            let messages = ["I could be wrong, but I don't think so.",
+                            "Let me check, but I'm pretty sure no.",
+                            "Absolutely. ^^",
+                            "Well yes, but actually no",
+                            "Why are you asking me?"];
+            message.channel.send(messages[random]);
+        }
+        else{
+            let random = Math.floor(Math.random() * 10); //0 - 9
+            if(random == 0){
+                message.react('👀');
+            }
+            if(random == 1){
+                message.react('😐');
+            }
+            if(random == 2){
+                message.react('💯');
+            }
         }
     }
 
