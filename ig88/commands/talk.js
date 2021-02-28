@@ -7,7 +7,7 @@ module.exports = {
 	execute(message, args) {
         let str = "";
         for(let i = 0; i < args.length; i++){
-            str += ", " + args[i];
+            str += " " + args[i];
         }
         if(message.author.id == '315672211518128128'){
             message.channel.send(str);	
