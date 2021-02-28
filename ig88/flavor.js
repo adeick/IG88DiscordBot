@@ -30,9 +30,6 @@ exports.execute = (message) => {
         if(random == 2){
             message.react('💯');
         }
-        if(random == 3){
-            message.channel.send("Sorry, I'm still taking awhile to get over the yawning pelicans. *shudders*")
-        }
     }
 
     if(args.includes("fuck") && message.channel.name != "shenanigans" && message.author.tag != "Darth_Vader#4942"){
