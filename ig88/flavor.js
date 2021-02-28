@@ -39,7 +39,7 @@ exports.execute = (message) => {
                 message.channel.send(messages[random]);   
             }
         }
-        else if(args[0].match(/why/)){
+        else if(args[0].match(/why/i)){
             let random = Math.floor(Math.random() * 4); //0 - 3
             let messages = ["You're asking the wrong bot.",
                             "It's a long story, I don't want to get into it",
@@ -47,7 +47,7 @@ exports.execute = (message) => {
                             "I think you're asking the wrong question."];
             message.channel.send(messages[random]);
         }
-        else if(args[0].match(/who/)){
+        else if(args[0].match(/who/i)){
             let random = Math.floor(Math.random() * 4); //0 - 3
             let messages = ["Not me",
                             "@Darth_Vader#4942",
@@ -55,7 +55,7 @@ exports.execute = (message) => {
                             "¯\\_(ツ)_/¯"];
             message.channel.send(messages[random]);
         }
-        else if(args[0].match(/where/)){
+        else if(args[0].match(/where/i)){
             let random = Math.floor(Math.random() * 4); //0 - 3
             let messages = ["Right over there",
                             "Down by the bay",
@@ -63,8 +63,8 @@ exports.execute = (message) => {
                             "¯\\_(ツ)_/¯"];
             message.channel.send(messages[random]);
         }
-        else if(args[0].match(/when/)){
-            if(args[1].match(/will/) || args[1].match(/would/)){
+        else if(args[0].match(/when/i)){
+            if(args[1].match(/will/i) || args[1].match(/would/i)){
                 let random = Math.floor(Math.random() * 4); //0 - 3
                 let messages = ["In a loooong loooong time",
                                 "NEVER! STOP ASKING",
