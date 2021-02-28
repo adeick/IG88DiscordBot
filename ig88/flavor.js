@@ -19,12 +19,12 @@ exports.execute = (message) => {
         }
     }
 
-    /*
+    
     if(target.tag == message.client.user.tag && target != message.author){
         const args = message.content.trim().split(/ +/); //turn words into parameters/arguments
-        if(args[0].match(/ig/i)){ 
-            args.shift();
-        }
+        // if(args[0].match(/ig/i)){ 
+        //     args.shift();
+        // }
         if(args[0].match(/how/i)){ 
             if(args[1].match(/many/i) || args[1].match(/much/i)){
                 let random = Math.floor(Math.random() * 3); //0 - 2
@@ -108,7 +108,7 @@ exports.execute = (message) => {
             }
         }
     }
-    */
+    
 
     if(args.includes("fuck") && message.channel.name != "shenanigans" && message.author.tag != "Darth_Vader#4942"){
         let random = Math.floor(Math.random() * 90); //0 - 5
