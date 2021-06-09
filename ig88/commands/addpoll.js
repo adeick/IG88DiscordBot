@@ -26,10 +26,12 @@ module.exports = {
           message.channel.send(str)
           .then((botMessage) => {
               for(i = i; i < args.length; i++){
-                  botMessage.react(args[i]);
-                  sleep(2000).then(() => { 
-                      console.log("Waited") //wait in between posting each emoji
-                  }); 
+                  botMessage.react(args[i])
+                  .then(console.log)
+                  .catch(console.error);
+                //   sleep(2000).then(() => { 
+                //       console.log("Waited") //wait in between posting each emoji
+                //   }); 
               }
           })	
           .catch((error) => {
