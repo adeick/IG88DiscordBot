@@ -1,0 +1,4 @@
+flipcoin
+math equation
+pick random number
+roll D6, D8, D10, D12, D20
