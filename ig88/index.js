@@ -25,7 +25,7 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
-client.on('message', message => {
+client.on('MESSAGE_CREATE', message => {
 	flavor.execute(message);
 	if (!message.content.startsWith(prefix) || message.author.bot) return; //if message doesn't start with prefix or was sent by a bot
 
@@ -70,7 +70,7 @@ client.on('message', message => {
 	}
 });
 
-client.on('guildMemberAdd', member => {
+client.on('GUILD_MEMBER_ADD', member => {
 	welcome.execute(member);
 });
 
