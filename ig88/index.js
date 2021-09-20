@@ -1,10 +1,10 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-const Client = require('./client/Client');
+const { Client, Intents } = require('discord.js');
 const { prefix, token } = require('./config.json');
 //const Sequelize = require('sequelize');
 
-const client = new Client();
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 //const timer = require('./timer');  //https://nodejs.org/api/modules.html#modules_module_exports
 
