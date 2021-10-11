@@ -15,7 +15,7 @@ exports.execute = (message) => {
     if(message.channel.name == "shenanigans"){
         let random = Math.floor(Math.random() * 1000); //0 - 999
         if(random == 0){
-            message.channel.send(`Anyone remember the great llama/emu war?`);
+            message.channel.send(`I just won a $100 scratchoff ticket`);
         }
     }
 
