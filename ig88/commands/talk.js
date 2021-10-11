@@ -19,3 +19,26 @@ module.exports = {
         message.delete();
     },
 };
+
+const { SlashCommandBuilder } = require('@discordjs/builders');
+
+
+module.exports = {
+	data: new SlashCommandBuilder()
+	.setName('talk')
+	.setDescription('IG finally has to use his Public Speaking notes')
+	.addStringOption(option =>
+		option.setName('speech')
+			.setDescription('The thing you want IG to say')
+			.setRequired(true)),
+    async execute(interaction) {
+        let str = interaction.options.data.getString(speech, true);
+        let msg = interaction.options.data.getMessage();
+        if(str){
+            msg.channel.send(speech);
+            msg.delete();
+            return;
+        }
+        return interaction.reply({ content: "You need to give me something to say!", ephemeral: true });
+    },
+}
