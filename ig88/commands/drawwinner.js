@@ -13,7 +13,7 @@ module.exports = {
     number = Math.floor(number);
     if(number > 0){
       if(args.length <= number){
-        message.channel.send("It doesn't look like we have any losers... so what exactly do you want me to do?");
+        message.channel.send("It doesn't look like we have any losers, what exactly do you want me to do?");
         return;
       }
       let person = message.mentions.members.first();
