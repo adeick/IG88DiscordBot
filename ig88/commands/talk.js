@@ -35,7 +35,7 @@ module.exports = {
         let str = interaction.options.data.getString(speech, true);
         let msg = interaction.options.data.getMessage();
         if(str){
-            msg.channel.send(speech);
+            msg.channel.send(str);
             msg.delete();
             return;
         }
