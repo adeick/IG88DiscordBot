@@ -32,7 +32,7 @@ module.exports = {
 			.setDescription('The thing you want IG to say')
 			.setRequired(true)),
     async execute(interaction) {
-        let str = interaction.options.data.getString(speech, true);
+        let str = interaction.options.data.getString('speech', true);
         let msg = interaction.options.data.getMessage();
         if(str){
             msg.channel.send(str);
