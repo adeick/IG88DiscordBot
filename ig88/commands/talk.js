@@ -33,10 +33,8 @@ module.exports = {
 			.setRequired(true)),
     async execute(interaction) {
         let str = interaction.options.getString('speech', true);
-        let msg = interaction.options.getMessage();
         if(str){
-            msg.channel.send(str);
-            msg.delete();
+            interaction.channel.send(str);
             return;
         }
         return interaction.reply({ content: "You need to give me something to say!", ephemeral: true });
