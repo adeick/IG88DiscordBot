@@ -35,7 +35,7 @@ module.exports = {
         let str = interaction.options.getString('speech', true);
         if(str){
             interaction.channel.send(str);
-            await interaction.reply({ content: ""});
+            await interaction.reply({ content: "..."});
             return interaction.deleteReply();
         }
         return interaction.reply({ content: "You need to give me something to say!", ephemeral: true });
