@@ -32,8 +32,8 @@ module.exports = {
 			.setDescription('The thing you want IG to say')
 			.setRequired(true)),
     async execute(interaction) {
-        let str = interaction.options.data.getString('speech', true);
-        let msg = interaction.options.data.getMessage();
+        let str = interaction.options.getString('speech', true);
+        let msg = interaction.options.getMessage();
         if(str){
             msg.channel.send(str);
             msg.delete();
