@@ -14,7 +14,7 @@ module.exports = {
                 .setRequired(true)),
 	async execute(interaction) {
         const q = interaction.options.getString('question', true);
-        const e = interaction.option.getString('emojis', true);
+        const e = interaction.options.getString('emojis', true);
         let args;
         let emojiValid = e && e.length() > 1;
           for(let i = 0; i < e.length(); i++){
