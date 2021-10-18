@@ -18,7 +18,7 @@ module.exports = {
         const e = interaction.options.getString('emojis', true);
         let i;
         let args = e.trim().split(/ +/);
-        let emojiValid = e && e.length > 1;
+        let emojiValid = e && args.length > 1;
           for(i = 0; i < e.length; i++){
               if(args[i].length > 2){
                   console.log("Perhaps no space?")
