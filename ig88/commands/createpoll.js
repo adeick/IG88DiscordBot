@@ -24,9 +24,14 @@ module.exports = {
               }
               else{
                   emojiValid = false;
-                  break;
               }
           }
+
+        let str = "";
+        for(i = 0; i < e.length; i++){
+            str += e.charAt(i) + ","
+        }
+
         if(q && emojiValid){
             const msg = interaction.channel.send(q)
 
@@ -39,7 +44,7 @@ module.exports = {
             .catch(console.error);
         }
         else if(q){
-            return interaction.reply({ content: "Emoji string not valid. Blame index " + i + " " + e.length, ephemeral: true });            
+            return interaction.reply({ content: "Emoji string not valid. Blame index " + str, ephemeral: true });            
         }
         else if(emojiValid){
             return interaction.reply({ content: "What are you trying to ask?", ephemeral: true });
