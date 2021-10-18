@@ -11,8 +11,8 @@ module.exports = {
         .addStringOption(option =>
             option.setName('emojis')
                 .setDescription('Which emoji responses do you want to add?')
-                .setRequired(true))
-                .addChoice('Thumbs', "👍 👎"),
+                .setRequired(true)
+                .addChoice('Thumbs', "👍 👎")),
 	async execute(interaction) {
         const q = interaction.options.getString('question', true);
         const e = interaction.options.getString('emojis', true);
