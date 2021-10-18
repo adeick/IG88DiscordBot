@@ -21,6 +21,7 @@ module.exports = {
           for(i = 0; i < e.length; i++){
               if(e.charAt(i).match(/(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g)){
                   args[i] = e.charAt(i);
+                  console.log("Emoji Found, index " + i)
               }
               else{
                   emojiValid = false;
