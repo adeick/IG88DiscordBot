@@ -36,6 +36,12 @@ module.exports = {
             })
             .catch(console.error);
         }
+        else if(q){
+            return interaction.reply({ content: "Emoji string not valid.", ephemeral: true });            
+        }
+        else if(emojiValid){
+            return interaction.reply({ content: "What are you trying to ask?", ephemeral: true });
+        }
         return interaction.reply({ content: "You need to give me something to say!", ephemeral: true });
 	},
 };
