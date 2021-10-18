@@ -12,7 +12,7 @@ module.exports = {
             option.setName('emojis')
                 .setDescription('Which emoji responses do you want to add?')
                 .setRequired(true)
-                .addChoice('Thumbs', "👍 👎")),
+                .addChoice('Thumbs', "👍👎")),
 	async execute(interaction) {
         const q = interaction.options.getString('question', true);
         const e = interaction.options.getString('emojis', true);
@@ -35,9 +35,9 @@ module.exports = {
           */
 
         if(q && emojiValid){
-            const msg = interaction.channel.send(q)
+            //const msg = interaction.channel.send(q)
 
-            await interaction.reply({ content: msg});
+            await interaction.reply({ content: q});
             interaction.fetchReply().then((botMsg) => {
                 for(let i = 0; i < args.length; i++){
                     botMsg.react(args[i]);
