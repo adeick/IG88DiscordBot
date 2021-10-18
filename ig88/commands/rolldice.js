@@ -18,20 +18,20 @@ module.exports = {
         sides = (sides) ? sides : 6; //set #sides to 6 if null
         number = (number) ? number : 1; //set #dice to 1 if null;
         let sum = 0;
-        let str;
+        let str = "";
         let i;
         for(i = 0; i < number; i++){
             num = 1 + Math.floor(Math.random() * sides);
             sum += num;
             if(num == 1) str += ":one:";
-            if(num == 2) str += ":two:";
-            if(num == 3) str += ":three:";
-            if(num == 4) str += ":four:";
-            if(num == 5) str += ":five:";
-            if(num == 6) str += ":six:";
-            if(num == 7) str += ":seven:";
-            if(num == 8) str += ":eight:";
-            if(num == 9) str += ":nine:";
+            else if(num == 2) str += ":two:";
+            else if(num == 3) str += ":three:";
+            else if(num == 4) str += ":four:";
+            else if(num == 5) str += ":five:";
+            else if(num == 6) str += ":six:";
+            else if(num == 7) str += ":seven:";
+            else if(num == 8) str += ":eight:";
+            else if(num == 9) str += ":nine:";
             else{
              str += " " + num + " ";   
             }
