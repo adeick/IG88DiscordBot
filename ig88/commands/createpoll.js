@@ -23,6 +23,7 @@ module.exports = {
               }
               else{
                   emojiValid = false;
+                  break;
               }
           }
         if(q && emojiValid){
@@ -37,7 +38,7 @@ module.exports = {
             .catch(console.error);
         }
         else if(q){
-            return interaction.reply({ content: "Emoji string not valid.", ephemeral: true });            
+            return interaction.reply({ content: "Emoji string not valid. Blame index " + i + " " + e.length, ephemeral: true });            
         }
         else if(emojiValid){
             return interaction.reply({ content: "What are you trying to ask?", ephemeral: true });
