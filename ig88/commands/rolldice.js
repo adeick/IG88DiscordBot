@@ -36,7 +36,9 @@ module.exports = {
              str += " " + num + " ";   
             }
         }
-        str += " \nTotal is " + sum;
+        if(number > 1){
+            str += " \nTotal: " + sum;
+        }
         if(str){
             return interaction.reply({ content: str});
         }
