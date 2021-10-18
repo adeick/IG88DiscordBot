@@ -11,27 +11,25 @@ module.exports = {
         .addStringOption(option =>
             option.setName('emojis')
                 .setDescription('Which emoji responses do you want to add?')
-                .setRequired(true)),
+                .setRequired(true))
+                .addChoice('Thumbs', "👍 👎"),
 	async execute(interaction) {
         const q = interaction.options.getString('question', true);
         const e = interaction.options.getString('emojis', true);
         let i;
-        let args;
+        let args = e.trim().split(/ +/);
         let emojiValid = e && e.length > 1;
           for(i = 0; i < e.length; i++){
-              if(e.charAt(i).match(/(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g)){
-                  args[i] = e.charAt(i);
+              if(args[i].length > 2){
+                  console.log("Perhaps no space?")
+              }
+              if(args[i].match(/(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g)){
                   console.log("Emoji Found, index " + i)
               }
               else{
                   emojiValid = false;
               }
           }
-
-        let str = "";
-        for(i = 0; i < e.length; i++){
-            str += e.charAt(i) + ","
-        }
 
         if(q && emojiValid){
             const msg = interaction.channel.send(q)
@@ -45,7 +43,7 @@ module.exports = {
             .catch(console.error);
         }
         else if(q){
-            return interaction.reply({ content: "Emoji string not valid. Blame index " + str, ephemeral: true });            
+            return interaction.reply({ content: "Emoji string not valid.", ephemeral: true });            
         }
         else if(emojiValid){
             return interaction.reply({ content: "What are you trying to ask?", ephemeral: true });
