@@ -3,18 +3,18 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 module.exports = {
 	data: new SlashCommandBuilder()
 	.setName('rolldice')
-	.setDescription('Did I ever tell you about the time I got kicked out of the casino?')
-	.addIntOption(option =>
+	.setDescription('🎲🎲 Did I ever tell you about the time I got kicked out of the casino?')
+	.addIntegerOption(option =>
 		option.setName('sides')
 			.setDescription('How many sides does the dice have? (Default 6)')
 			.setRequired(false))
-    .addIntOption(option =>
+    .addIntegerOption(option =>
         option.setName('number')
             .setDescription('How many dice to roll? (Default 1)')
             .setRequired(false)),
     async execute(interaction) {
-        let sides = interaction.options.getString('sides');
-        let number = interaction.options.getString('number');
+        let sides = interaction.options.getInteger('sides');
+        let number = interaction.options.getInteger('number');
         sides = (sides) ? sides : 6; //set #sides to 6 if null
         number = (number) ? number : 1; //set #dice to 1 if null;
         let sum = 0;
