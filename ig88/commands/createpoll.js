@@ -38,12 +38,13 @@ module.exports = {
             //const msg = interaction.channel.send(q)
 
             await interaction.reply({ content: q});
-            interaction.fetchReply().then((botMsg) => {
+            await interaction.fetchReply().then((botMsg) => {
                 for(let i = 0; i < args.length; i++){
                     botMsg.react(args[i]);
                 }
             })
             .catch(console.error);
+            return;
         }
         else if(q){
             return interaction.reply({ content: "Emoji string not valid.", ephemeral: true });            
