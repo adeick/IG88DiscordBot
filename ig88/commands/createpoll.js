@@ -19,7 +19,7 @@ module.exports = {
         let i;
         let args = e.trim().split(/ +/);
         let emojiValid = e && args.length > 1;
-          for(i = 0; i < e.length; i++){
+          for(i = 0; i < args.length; i++){
               if(args[i].length > 2){
                   console.log("Perhaps no space?")
               }
