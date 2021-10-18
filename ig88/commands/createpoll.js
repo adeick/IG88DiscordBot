@@ -17,9 +17,10 @@ module.exports = {
         const q = interaction.options.getString('question', true);
         const e = interaction.options.getString('emojis', true);
         let i;
-        let args = e.trim().split(/ +/);
+        let args = [...e];
         console.log(args.length);
         let emojiValid = e && args.length > 1;
+        /*
           for(i = 0; i < args.length; i++){
               if(args[i].length > 2){
                   console.log("Perhaps no space?")
@@ -31,6 +32,7 @@ module.exports = {
                   emojiValid = false;
               }
           }
+          */
 
         if(q && emojiValid){
             const msg = interaction.channel.send(q)
