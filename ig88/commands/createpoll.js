@@ -16,8 +16,8 @@ module.exports = {
         const q = interaction.options.getString('question', true);
         const e = interaction.option.getString('emojis', true);
         let args;
-        let emojiValid = e && e.length > 1;
-          for(let i = 0; i < e.length; i++){
+        let emojiValid = e && e.length() > 1;
+          for(let i = 0; i < e.length(); i++){
               if(e.charAt(i).match(/(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g)){
                   args[i] = e.charAt(i);
               }
